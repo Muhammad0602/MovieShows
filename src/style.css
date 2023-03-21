@@ -1,3 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: bisque;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(./images/movie.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 3rem 5rem;
+  padding: 1rem;
+}
+
+.main-container #a8 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container #a9 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+}
+
+.movie .heart {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+.movie h3 {
+  padding: 0.5rem;
+}
+
+.movie .heart i {
+  color: red;
+  transition: 0.2s ease-in-out;
+}
+
+.movie .btn-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color:  rgb(11, 226, 11);
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+ font-size: 18px;
+}
+
+.movie .heart i:hover {
+  font-size: 30px;
 }
