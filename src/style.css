@@ -72,14 +72,14 @@ h1 {
   outline: none;
   cursor: pointer;
   background: none;
-  color:  rgb(11, 226, 11);
+  color: rgb(11, 226, 11);
   font-size: 16px;
   font-weight: 600;
   transition: 0.2s ease-in-out;
 }
 
 .btn:hover {
- font-size: 18px;
+  font-size: 18px;
 }
 
 .movie .heart i:hover {
