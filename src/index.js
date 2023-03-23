@@ -1,7 +1,8 @@
 import './style.css';
 import render from './modules/homepage.js';
-import { postLikes, getLikes } from './modules/likesNumber';
+import { postLikes, getLikes } from './modules/likesNumber.js';
+
 render(getLikes, postLikes);
 
-postLikes("exampleId").then(res => console.log(res));
-getLikes().then(res => console.log(res));
+// postLikes('exampleId').then((res) => console.log(res));
+// getLikes().then((res) => console.log(res));

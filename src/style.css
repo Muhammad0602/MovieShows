@@ -45,7 +45,7 @@ h1 {
 }
 
 .movie:hover {
- transform: scale(1.07);
+  transform: scale(1.07);
 }
 
 .movie h3 {
@@ -72,7 +72,7 @@ h1 {
   transition: 0.2s ease-in-out;
 }
 
-.movie  p {
+.movie p {
   font-size: 1.2em;
   position: relative;
   left: -30px;

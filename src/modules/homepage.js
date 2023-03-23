@@ -11,9 +11,9 @@ const getMovies = async () => {
 // Create a movie
 
 const render = async (getLikes, postLikes) => {
-    const likes = await getLikes();
+  const likes = await getLikes();
 
-    //  console.log(likes);
+  //  console.log(likes);
   getMovies().then((res) => {
     res.forEach((film, index) => {
       const movie = document.createElement('div');
@@ -21,8 +21,8 @@ const render = async (getLikes, postLikes) => {
       movie.classList.add('movie');
 
       // Getting the item with the needed it
-      const foundFilm = likes.find(like => like.item_id == film.show.id)
- 
+      const foundFilm = likes.find((like) => like.item_id == film.show.id);
+
       movie.innerHTML = `
         <img src="${film.show.image.medium}" alt="${film.show.name}">
         <h3>${film.show.name}</h3>
@@ -38,15 +38,14 @@ const render = async (getLikes, postLikes) => {
     });
     document.querySelector('.main').appendChild(container);
 
-            // Add a new like 
+    // Add a new like
 
     const btnLikes = document.querySelectorAll('.heart');
-    btnLikes.forEach(like => {
+    btnLikes.forEach((like) => {
       like.addEventListener('click', () => {
         postLikes(like.id);
-      }
-        );
-    })
+      });
+    });
   });
 };
 
