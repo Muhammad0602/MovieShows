@@ -23,7 +23,7 @@ const render = async (getLikes, postLikes) => {
       movie.classList.add('movie');
 
       // Getting the item with the needed it
-      const foundFilm = likes.find((like) => parseInt(like.item_id) === film.show.id);
+      const foundFilm = likes.find((like) => parseInt(like.item_id, 10) === film.show.id);
 
       movie.innerHTML = `
         <img src="${film.show.image.medium}" alt="${film.show.name}">
