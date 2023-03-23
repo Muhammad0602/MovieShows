@@ -140,6 +140,8 @@ footer {
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  overflow-y: scroll;
+  padding-bottom: 10px;
 }
 
 .popupTitle {
@@ -157,11 +159,17 @@ footer {
 
 .popupClose {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 20px;
+  top: 20px;
   border: none;
   background-color: white;
   cursor: pointer;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.popupClose:hover {
+  background-color: #9c9898;
 }
 
 .commentContainer {
@@ -171,4 +179,23 @@ footer {
 
 .commentsTitle {
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.commentFormContainer {
+  color: black;
+  margin-top: 20px;
+}
+
+.commentFormTitle {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
 }
