@@ -1,3 +1,5 @@
+import popup from './popup.js';
+
 const movieUrl = 'https://api.tvmaze.com/search/shows?q=fbi';
 const container = document.createElement('div');
 container.classList.add('main-container');
@@ -30,15 +32,18 @@ const render = async (getLikes, postLikes) => {
             <button class="heart" id=${film.show.id}>
               <i class="far fa-heart fa-2x"></i>
             </button>  
-            <p>${foundFilm.likes}</p>    
-            <button class="btn">Comment</button> 
+            <p>${foundFilm.likes}</p>
+            <button class="btn btnComment" id="${film.show.id}">Comment</button> 
         </div>       
 `;
       container.appendChild(movie);
     });
     document.querySelector('.main').appendChild(container);
 
-    // Add a new like
+    const btnComments = document.querySelectorAll('.btnComment');
+    btnComments.forEach((comment) => {
+      comment.addEventListener('click', popup);
+    });
 
     const btnLikes = document.querySelectorAll('.heart');
     btnLikes.forEach((like) => {
