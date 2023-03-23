@@ -1,3 +1,5 @@
+import popup from './popup.js';
+
 const movieUrl = 'https://api.tvmaze.com/search/shows?q=fbi';
 // const movieUrl1 = 'https://api.tvmaze.com/search/shows?q=hero';
 
@@ -24,12 +26,17 @@ const render = async () => {
         <h3>${film.show.name}</h3>
         <div class="btn-container">
             <button class="heart"><i class="far fa-heart fa-2x"></i></button>        
-            <button class="btn">Comment</button> 
+            <button class="btn btnComment" id="${film.show.id}">Comment</button> 
         </div>       
 `;
       container.appendChild(movie);
     });
     document.querySelector('.main').appendChild(container);
+
+    const btnComments = document.querySelectorAll('.btnComment');
+    btnComments.forEach((comment) => {
+      comment.addEventListener('click', popup);
+    });
   });
 };
 

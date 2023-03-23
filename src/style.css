@@ -124,3 +124,42 @@ footer {
   background-color: #b3b1b1;
   height: 60px;
 }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  width: 85%;
+  height: 90vh;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.popupTitle {
+  color: black;
+  margin: 5px;
+}
+
+.popupDesc {
+  color: black;
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+  width: 100%;
+}
+
+.popupClose {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
