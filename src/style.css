@@ -163,3 +163,12 @@ footer {
   background-color: white;
   cursor: pointer;
 }
+
+.commentContainer {
+  color: black;
+  margin-top: 10px;
+}
+
+.commentsTitle {
+  margin-bottom: 10px;
+}
