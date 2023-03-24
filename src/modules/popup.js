@@ -14,10 +14,24 @@ const getComment = async (id) => {
   const result = await response.json();
   return result;
 };
-const showComment = (id) => {
+const commentCounter =async (id) => {
+  console.log('hes');
+  const counter = document.getElementById('commentTitle');
   getComment(id).then((res) => {
-    let commentContainer = `
-    <h2 class="commentsTitle">Comments (x)</h2>`;
+    if(res.length>0){
+      console.log(res.length);
+      console.log(counter);
+      counter.innerText = "Comments (" + res.length + ")";
+      console.log(counter);
+    }else{
+      counter.innerText = "Comments (0)";
+    }
+   
+  });
+};
+const showComment =async (id) => {
+  getComment(id).then((res) => {
+    let commentContainer = ``;
     try {
       res.forEach((element) => {
         commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
@@ -25,7 +39,7 @@ const showComment = (id) => {
     } catch (e) {
       commentContainer += '<p>No comments yet';
     }
-    document.getElementById('commentContainer').innerHTML = commentContainer;
+    document.getElementById('commentBody').innerHTML = commentContainer;
   });
 };
 const addComment = async (id) => {
@@ -46,7 +60,11 @@ const addComment = async (id) => {
   });
   formName.value = '';
   formComment.value = '';
-  showComment(id);
+   showComment(id).then(()=>{
+    commentCounter(id);
+   });
+  
+  
 };
 
 const popup = async (event) => {
@@ -73,7 +91,8 @@ const popup = async (event) => {
     getComment(movieId).then((res) => {
       let commentContainer = `
                         <div class="commentContainer" id="commentContainer">
-                        <h2 class="commentsTitle">Comments (x)</h2>`;
+                        <h2 class="commentsTitle" id="commentTitle">Comments (x)</h2>
+                        <div id="commentBody">`;
       try {
         res.forEach((element) => {
           commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
@@ -82,7 +101,7 @@ const popup = async (event) => {
         commentContainer += '<p>No comments yet';
       }
 
-      commentContainer += '</div>';
+      commentContainer += '</div></div>';
       pop.innerHTML += commentContainer;
 
       const commentForm = `
@@ -99,6 +118,7 @@ const popup = async (event) => {
 
       document.querySelector('.main').appendChild(pop);
       document.getElementById('popupClose').addEventListener('click', close);
+      commentCounter(movieId);
       document.getElementById('commentFormButton').addEventListener('click', () => { addComment(movieId); });
     });
   });
