@@ -14,24 +14,19 @@ const getComment = async (id) => {
   const result = await response.json();
   return result;
 };
-const commentCounter =async (id) => {
-  console.log('hes');
+const commentCounter = async (id) => {
   const counter = document.getElementById('commentTitle');
   getComment(id).then((res) => {
-    if(res.length>0){
-      console.log(res.length);
-      console.log(counter);
-      counter.innerText = "Comments (" + res.length + ")";
-      console.log(counter);
-    }else{
-      counter.innerText = "Comments (0)";
+    if (res.length > 0) {
+      counter.innerText = `Comments (${res.length})`;
+    } else {
+      counter.innerText = 'Comments (0)';
     }
-   
   });
 };
-const showComment =async (id) => {
+const showComment = async (id) => {
   getComment(id).then((res) => {
-    let commentContainer = ``;
+    let commentContainer = '';
     try {
       res.forEach((element) => {
         commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
@@ -60,11 +55,9 @@ const addComment = async (id) => {
   });
   formName.value = '';
   formComment.value = '';
-   showComment(id).then(()=>{
+  showComment(id).then(() => {
     commentCounter(id);
-   });
-  
-  
+  });
 };
 
 const popup = async (event) => {
