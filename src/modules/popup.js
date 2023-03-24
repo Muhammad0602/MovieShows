@@ -16,19 +16,17 @@ const getComment = async (id) => {
 };
 export const commentCount = (comments) => {
   if (comments) {
-    if(comments.length>0){
+    if (comments.length > 0) {
       return comments.length;
-    }else{
-      return 0;
     }
-  } else {
     return 0;
   }
+  return 0;
 };
 const commentCounter = async (id) => {
   const counter = document.getElementById('commentTitle');
   getComment(id).then((res) => {
-      counter.innerText = `Comments (${commentCount(res)})`;
+    counter.innerText = `Comments (${commentCount(res)})`;
   });
 };
 const showComment = async (id) => {
