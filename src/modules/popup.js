@@ -16,7 +16,11 @@ const getComment = async (id) => {
 };
 export const commentCount = (comments) => {
   if (comments) {
-    return comments.length;
+    if(comments.length>0){
+      return comments.length;
+    }else{
+      return 0;
+    }
   } else {
     return 0;
   }
@@ -35,7 +39,7 @@ const showComment = async (id) => {
         commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
       });
     } catch (e) {
-      commentContainer += '<p>No comments yet';
+      commentContainer += '<p>No comments yet</p>';
     }
     document.getElementById('commentBody').innerHTML = commentContainer;
   });
