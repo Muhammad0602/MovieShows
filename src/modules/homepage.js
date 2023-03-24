@@ -1,4 +1,5 @@
 import popup from './popup.js';
+import itemsNumber from './itemsCounter.js';
 
 const movieUrl = 'https://api.tvmaze.com/search/shows?q=fbi';
 const container = document.createElement('div');
@@ -15,7 +16,6 @@ const getMovies = async () => {
 const render = async (getLikes, postLikes) => {
   const likes = await getLikes();
 
-  //  console.log(likes);
   getMovies().then((res) => {
     res.forEach((film, index) => {
       const movie = document.createElement('div');
@@ -24,6 +24,7 @@ const render = async (getLikes, postLikes) => {
 
       // Getting the item with the needed it
       const foundFilm = likes.find((like) => parseInt(like.item_id, 10) === film.show.id);
+      const likesCount = foundFilm && foundFilm.likes ? foundFilm.likes : 0;
 
       movie.innerHTML = `
         <img src="${film.show.image.medium}" alt="${film.show.name}">
@@ -32,13 +33,17 @@ const render = async (getLikes, postLikes) => {
             <button class="heart" id=${film.show.id}>
               <i class="far fa-heart fa-2x"></i>
             </button>  
-            <p>${foundFilm.likes}</p>
+            <p>${likesCount}</p>
             <button class="btn btnComment" id="${film.show.id}">Comment</button> 
         </div>       
 `;
       container.appendChild(movie);
     });
     document.querySelector('.main').appendChild(container);
+
+    const moviesNumber = itemsNumber();
+    const movieLi = document.querySelector('.movie-li');
+    movieLi.innerHTML = `Movies (${moviesNumber})`;
 
     const btnComments = document.querySelectorAll('.btnComment');
     btnComments.forEach((comment) => {
@@ -48,7 +53,13 @@ const render = async (getLikes, postLikes) => {
     const btnLikes = document.querySelectorAll('.heart');
     btnLikes.forEach((like) => {
       like.addEventListener('click', () => {
-        postLikes(like.id);
+        postLikes(like.id)
+          .catch(() => {
+            const pTag = like.nextElementSibling;
+            pTag.textContent = parseInt(pTag.textContent, 10) - 1;
+          });
+        const pTag = like.nextElementSibling;
+        pTag.textContent = parseInt(pTag.textContent, 10) + 1;
       });
     });
   });
