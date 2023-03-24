@@ -14,14 +14,19 @@ const getComment = async (id) => {
   const result = await response.json();
   return result;
 };
+export const commentCount = (comments) => {
+  if (comments) {
+    if (comments.length > 0) {
+      return comments.length;
+    }
+    return 0;
+  }
+  return 0;
+};
 const commentCounter = async (id) => {
   const counter = document.getElementById('commentTitle');
   getComment(id).then((res) => {
-    if (res.length > 0) {
-      counter.innerText = `Comments (${res.length})`;
-    } else {
-      counter.innerText = 'Comments (0)';
-    }
+    counter.innerText = `Comments (${commentCount(res)})`;
   });
 };
 const showComment = async (id) => {
@@ -32,7 +37,7 @@ const showComment = async (id) => {
         commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
       });
     } catch (e) {
-      commentContainer += '<p>No comments yet';
+      commentContainer += '<p>No comments yet</p>';
     }
     document.getElementById('commentBody').innerHTML = commentContainer;
   });
