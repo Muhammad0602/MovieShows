@@ -1,11 +1,8 @@
 import popup from './popup.js';
 
 const movieUrl = 'https://api.tvmaze.com/search/shows?q=fbi';
-// const movieUrl1 = 'https://api.tvmaze.com/search/shows?q=hero';
-
 const container = document.createElement('div');
 container.classList.add('main-container');
-// const container1 = document.createElement('div');
 
 const getMovies = async () => {
   const response = await fetch(movieUrl);
@@ -15,17 +12,27 @@ const getMovies = async () => {
 
 // Create a movie
 
-const render = async () => {
+const render = async (getLikes, postLikes) => {
+  const likes = await getLikes();
+
+  //  console.log(likes);
   getMovies().then((res) => {
     res.forEach((film, index) => {
       const movie = document.createElement('div');
       movie.id = `a${index}`;
       movie.classList.add('movie');
+
+      // Getting the item with the needed it
+      const foundFilm = likes.find((like) => parseInt(like.item_id, 10) === film.show.id);
+
       movie.innerHTML = `
         <img src="${film.show.image.medium}" alt="${film.show.name}">
         <h3>${film.show.name}</h3>
         <div class="btn-container">
-            <button class="heart"><i class="far fa-heart fa-2x"></i></button>        
+            <button class="heart" id=${film.show.id}>
+              <i class="far fa-heart fa-2x"></i>
+            </button>  
+            <p>${foundFilm.likes}</p>
             <button class="btn btnComment" id="${film.show.id}">Comment</button> 
         </div>       
 `;
@@ -37,33 +44,14 @@ const render = async () => {
     btnComments.forEach((comment) => {
       comment.addEventListener('click', popup);
     });
+
+    const btnLikes = document.querySelectorAll('.heart');
+    btnLikes.forEach((like) => {
+      like.addEventListener('click', () => {
+        postLikes(like.id);
+      });
+    });
   });
 };
-
-// const getMovies1 = async () => {
-//   const response = await fetch(movieUrl1);
-//   const result = await response.json();
-//   return result;
-// };
-
-// Create a movie
-
-// const render1 = async () => {
-//   getMovies1().then((res) => {
-//     res.forEach((film) => {
-//       const movie = document.createElement('div');
-//       movie.innerHTML = `
-//         <img src="${film.show.image.medium}" alt="${film.show.name}">
-//         <h4>${film.show.name}<h4>
-//         <button><i class="far fa-heart"></i></button>
-//         <button>Comment</button>
-// `;
-//       container1.appendChild(movie);
-//     });
-//     document.body.appendChild(container1);
-//   });
-// };
-
-// render1();
 
 export default render;

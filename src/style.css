@@ -41,6 +41,23 @@ h1 {
   align-items: center;
   border: 2px solid white;
   border-radius: 0.3rem;
+  transition: 0.4s ease-out;
+}
+
+.movie:hover {
+  transform: scale(1.07);
+}
+
+.movie h3 {
+  padding: 0.5rem;
+}
+
+.movie .btn-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
 }
 
 .movie .heart {
@@ -50,21 +67,15 @@ h1 {
   background: none;
 }
 
-.movie h3 {
-  padding: 0.5rem;
-}
-
 .movie .heart i {
   color: red;
   transition: 0.2s ease-in-out;
 }
 
-.movie .btn-container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem;
+.movie p {
+  font-size: 1.2em;
+  position: relative;
+  left: -30px;
 }
 
 .btn {
@@ -79,18 +90,11 @@ h1 {
 }
 
 .btn:hover {
-  font-size: 18px;
+  transform: scale(1.15);
 }
 
 .movie .heart i:hover {
-  font-size: 30px;
-  background-color: rgb(240, 243, 238);
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transform: scale(1.15);
 }
 
 .logo {
