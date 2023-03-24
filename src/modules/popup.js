@@ -14,14 +14,17 @@ const getComment = async (id) => {
   const result = await response.json();
   return result;
 };
+export const commentCount = (comments) => {
+  if (comments) {
+    return comments.length;
+  } else {
+    return 0;
+  }
+};
 const commentCounter = async (id) => {
   const counter = document.getElementById('commentTitle');
   getComment(id).then((res) => {
-    if (res.length > 0) {
-      counter.innerText = `Comments (${res.length})`;
-    } else {
-      counter.innerText = 'Comments (0)';
-    }
+      counter.innerText = `Comments (${commentCount(res)})`;
   });
 };
 const showComment = async (id) => {
