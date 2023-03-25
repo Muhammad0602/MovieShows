@@ -1,8 +1,219 @@
-body {
-  background-color: bisque;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.hello {
-    color: red;
-    background: url('./icon.png');
-  }
+body {
+  background-color: bisque;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(./images/movie.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 3rem 5rem;
+  padding: 1rem;
+}
+
+.main-container #a8 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.main-container #a9 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+  transition: 0.4s ease-out;
+}
+
+.movie:hover {
+  transform: scale(1.07);
+}
+
+.movie h3 {
+  padding: 0.5rem;
+}
+
+.movie .btn-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.movie .heart {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+.movie .heart i {
+  color: red;
+  transition: 0.2s ease-in-out;
+}
+
+.movie p {
+  font-size: 1.2em;
+  position: relative;
+  left: -30px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: rgb(11, 226, 11);
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+}
+
+.movie .heart i:hover {
+  transform: scale(1.15);
+}
+
+.logo {
+  font-size: xx-large;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  margin-top: 50px;
+}
+
+.navbarLinks {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbarLinks .movie-li {
+  background-color: rgb(127 30 30);
+  color: #06ee98;
+  border-radius: 0.2rem;
+}
+
+.navbarLinks li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 0.5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b3b1b1;
+  height: 60px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgb(209, 207, 207);
+  width: 60%;
+  height: 90vh;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}
+
+.popupTitle {
+  color: black;
+  margin: 5px;
+}
+
+.popupDesc {
+  color: black;
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+  width: 100%;
+}
+
+.popupClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.popupClose:hover {
+  background-color: #9c9898;
+}
+
+.commentContainer {
+  color: black;
+  margin-top: 10px;
+}
+
+.commentsTitle {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.commentFormContainer {
+  color: black;
+  margin-top: 20px;
+}
+
+.commentFormTitle {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.userComment {
+  border: 1px solid rgb(146, 144, 144);
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px;
+}
