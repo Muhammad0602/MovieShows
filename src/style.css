@@ -134,11 +134,11 @@ footer {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: white;
-  width: 85%;
+  background-color: rgb(209, 207, 207);
+  width: 60%;
   height: 90vh;
-  margin-left: 7.5%;
-  margin-right: 7.5%;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 3%;
   display: flex;
   flex-direction: column;
@@ -202,4 +202,11 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 7px;
+}
+
+.userComment {
+  border: 1px solid rgb(146, 144, 144);
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px;
 }
