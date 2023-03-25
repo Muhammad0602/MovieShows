@@ -7,6 +7,7 @@ const getMovie = async (id) => {
 const close = () => {
   const popup = document.getElementById('popup');
   document.querySelector('main').removeChild(popup);
+  document.querySelector('body').style.overflowY = 'scroll';
 };
 const getComment = async (id) => {
   const link = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XtuVNngLWGIw29DM2WbT/comments?item_id=${id}`;
@@ -34,7 +35,7 @@ const showComment = async (id) => {
     let commentContainer = '';
     try {
       res.forEach((element) => {
-        commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
+        commentContainer += `<p class="userComment">${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
       });
     } catch (e) {
       commentContainer += '<p>No comments yet</p>';
@@ -93,7 +94,7 @@ const popup = async (event) => {
                         <div id="commentBody">`;
       try {
         res.forEach((element) => {
-          commentContainer += `<p>${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
+          commentContainer += `<p class="userComment">${element.creation_date}&nbsp &nbsp ${element.username}  : &nbsp &nbsp ${element.comment}`;
         });
       } catch (e) {
         commentContainer += '<p>No comments yet';
@@ -118,6 +119,7 @@ const popup = async (event) => {
       document.getElementById('popupClose').addEventListener('click', close);
       commentCounter(movieId);
       document.getElementById('commentFormButton').addEventListener('click', () => { addComment(movieId); });
+      document.querySelector('body').style.overflowY = 'hidden';
     });
   });
 };
