@@ -81,7 +81,8 @@ git clone github.com/Muhammad0602/Portfolio-mobile-first.git
 To run the project, execute the following commands:
  - first `npm install`
  - second `npm run build`
- - and lastly `npm start` 
+ - third `npm start`
+ - and lastly for test purposes `npm install --save-dev jest-environment-jsdom`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
