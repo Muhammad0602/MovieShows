@@ -114,11 +114,18 @@ h1 {
   display: flex;
   gap: 30px;
 }
+ 
+.navbarLinks .movie-li {
+  background-color: rgb(127 30 30);
+  color: #06ee98;
+  border-radius: 0.2rem;
+}
 
 .navbarLinks li a {
   text-decoration: none;
   color: white;
-  font-size: larger;
+  font-size: 20px;
+  padding: 0.5rem;
 }
 
 footer {
