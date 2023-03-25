@@ -1,9 +1,9 @@
-# webpackSetUp
+#MovieShows
 <a name="readme-top"></a>
 
 <div align="center">
 
-  <h3><b> My Books README</b></h3>
+  <h3><b> MovieShows README</b></h3>
 
 </div>
 
@@ -26,10 +26,10 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖Webpack <a name="about-project"></a>
+# 📖MovieShows <a name="about-project"></a>
 
 
-This is a project about getting the basics of webpack. You will be able to load JavaScript, CSS and also images via webpack.
+This website is where you can choose your favorite movies and learn more information about them. If you like a movie you can like it and add a comment as well.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -39,7 +39,9 @@ This is a project about getting the basics of webpack. You will be able to load 
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">HTML</a></li>
+    <li><a href="https://reactjs.org/">CSS</a></li>
     <li><a href="https://reactjs.org/">JavaScript</a></li>
+    <li><a href="https://reactjs.org/">Webpack</a></li>
   </ul>
 </details>
 
@@ -76,8 +78,10 @@ git clone github.com/Muhammad0602/Portfolio-mobile-first.git
 
 ### Usage
 
-To run the project, execute the following command:
- open the project by launching the Live Server plugging in visual studio code(or your code editor) 
+To run the project, execute the following commands:
+ - first `npm install`
+ - second `npm run build`
+ - and lastly `npm start` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,12 +93,18 @@ To run the project, execute the following command:
 - Twitter: [Muhammad Davlatov](https://twitter.com/MuhammadDavla20)
 - LinkedIn: [Muhammad Davlatov](https://www.linkedin.com/in/muhammad-davlatov-6a8536254/)
 
+👤 **Ghulam Reza Rajabi**
+
+- GitHub: [Ghulam Reza Rajabi](https://github.com/ghreza-crypto)
+- Twitter: [Ghulam Reza Rajabi](https://twitter.com/ghulam_rajabi?t=0Wmw1BrW-Udn66p3rjXdqg&s=09)
+- LinkedIn: [Ghulam Reza Rajabi](https://www.linkedin.com/in/ghulam-reza-rajabi-7a9aa3142)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- I am working on the desktop version of the project, and soon God willing I'll deploy it.
-- I am working to add some other loading like fonts, urls etc.
+- Great design improvements on the way.
+- Responsiveness is something we will surely work on.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,7 +119,7 @@ Feel free to check the [issues page](../../issues/).
 ## ⭐️ Show your support <a name="support"></a>
 
 
-If you like this project leave it a star.
+If you like this project leave it a star ⭐.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,7 +127,7 @@ If you like this project leave it a star.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 
-I would like to thank everyone who helped me to finish this project, without whom it would be very difficult.
+We would like to thank Microverse community for their great support and also our friend and partners who share their knowledge and experience. Love you all!😊❤️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
