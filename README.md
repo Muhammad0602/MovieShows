@@ -73,7 +73,7 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository to your desired folder:
-git clone github.com/Muhammad0602/Portfolio-mobile-first.git
+git clone https://github.com/Muhammad0602/MovieShows.git
 
 
 ### Usage
