@@ -54,7 +54,7 @@ This website is where you can choose your favorite movies and learn more informa
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- not available
+[Visit live](https://muhammad0602.github.io/MovieShows/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,7 +73,7 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository to your desired folder:
-git clone github.com/Muhammad0602/Portfolio-mobile-first.git
+git clone https://github.com/Muhammad0602/MovieShows.git
 
 
 ### Usage
