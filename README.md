@@ -54,7 +54,7 @@ This website is where you can choose your favorite movies and learn more informa
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- not available
+[Visit live](https://muhammad0602.github.io/MovieShows/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
